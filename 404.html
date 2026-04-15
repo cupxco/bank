@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | CXCO Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a31e2e 0%, #c8102e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-shadow {
+            box-shadow: 0 10px 20px -5px rgba(163, 30, 46, 0.3);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-6">
+
+    <div class="max-w-2xl w-full text-center space-y-8">
+        <div class="flex justify-center items-center gap-x-2 mb-12">
+            <div class="w-10 h-10 bg-[#a31e2e] text-white rounded-xl flex items-center justify-center text-2xl font-bold">C</div>
+            <span class="text-2xl font-bold tracking-tight heading-font text-gray-900">CXCO BANK</span>
+        </div>
+
+        <div class="relative">
+            <h1 class="text-[120px] md:text-[180px] font-bold leading-none gradient-text opacity-10 select-none">404</h1>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 heading-font">Lost in Transaction?</h2>
+                <p class="text-gray-500 mt-4 max-w-sm mx-auto">
+                    The page you are looking for doesn't exist or has been moved to a secure vault.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+            <a href="/" class="w-full sm:w-auto px-8 py-4 bg-[#a31e2e] text-white font-bold rounded-2xl btn-shadow hover:bg-black transition-all">
+                Return to Dashboard
+            </a>
+            <button onclick="history.back()" class="w-full sm:w-auto px-8 py-4 border border-gray-200 text-gray-600 font-semibold rounded-2xl hover:bg-gray-50 transition-all">
+                Go Back
+            </button>
+        </div>
+
+        <div class="pt-12 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+            <div class="p-4 hover:bg-gray-50 rounded-2xl transition-colors cursor-pointer" onclick="alert('Support is coming soon!')">
+                <span class="text-2xl block mb-2">📞</span>
+                <span class="font-bold text-gray-900">Help Center</span>
+                <p class="text-gray-500 text-xs">24/7 Assistance</p>
+            </div>
+            <div class="p-4 hover:bg-gray-50 rounded-2xl transition-colors cursor-pointer" onclick="alert('Security center is coming soon!')">
+                <span class="text-2xl block mb-2">🔒</span>
+                <span class="font-bold text-gray-900">Security</span>
+                <p class="text-gray-500 text-xs">Fraud Reporting</p>
+            </div>
+            <div class="p-4 hover:bg-gray-50 rounded-2xl transition-colors cursor-pointer" onclick="alert('Sitemap is coming soon!')">
+                <span class="text-2xl block mb-2">🗺️</span>
+                <span class="font-bold text-gray-900">Sitemap</span>
+                <p class="text-gray-500 text-xs">All Services</p>
+            </div>
+        </div>
+
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-12">
+            © 2026 CupX Corporation • Regulated Entity
+        </p>
+    </div>
+
+</body>
+</html>
