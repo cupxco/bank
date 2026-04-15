@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CXCO Bank | Digital Banking Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #a31e2e;
+            --accent: #ffcc00;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, #a31e2e, #8b1825);
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #a31e2e 0%, #c8102e 50%, #a31e2e 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(163, 30, 46, 0.1);
+        }
+
+        .credit-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            aspect-ratio: 1.58 / 1;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        
+        .credit-card-gold {
+            background: linear-gradient(135deg, #b8860b 0%, #ffd700 100%);
+        }
+
+        /* Mobile Fixes */
+        @media (max-width: 640px) {
+            .hero-text { font-size: 2.5rem; line-height: 1.1; }
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <div class="bg-[#8b1825] text-white py-2">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-[10px] md:text-sm gap-2">
+            <div class="flex items-center gap-x-3">
+                <span class="bg-[#ffcc00] text-[#a31e2e] font-bold px-2 py-px rounded">NEW</span>
+                <span>UPI Instant Payments • Zero Charges for CupX Users</span>
+            </div>
+            <div class="flex items-center gap-x-4 opacity-90">
+                <span class="cursor-pointer" onclick="showMsg('Support')">📞 1800-CXCO-123</span>
+                <span class="cursor-pointer" onclick="showMsg('Language')">🇮🇳 English/Hindi</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar sticky top-0 z-50 px-4 py-4 md:py-5 shadow-lg">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-x-2">
+                <div class="w-9 h-9 md:w-10 md:h-10 bg-[#ffcc00] text-[#a31e2e] rounded-xl flex items-center justify-center text-xl md:text-2xl font-bold">C</div>
+                <div class="flex flex-col">
+                    <span class="text-xl md:text-2xl font-bold text-white tracking-tight heading-font leading-none">CXCO BANK</span>
+                    <span class="text-[#ffcc00] text-[8px] tracking-[2px] font-bold">CUPX CORPORATION</span>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-x-6 text-white text-sm font-medium">
+                <a onclick="showMsg('Personal')" class="hover:text-[#ffcc00] cursor-pointer">Personal</a>
+                <a onclick="showMsg('Business')" class="hover:text-[#ffcc00] cursor-pointer">Business</a>
+                <a href="#cards-section" class="hover:text-[#ffcc00] cursor-pointer">Cards</a>
+                <a onclick="showMsg('Loans')" class="hover:text-[#ffcc00] cursor-pointer">Loans</a>
+            </div>
+
+            <div class="flex items-center gap-x-3">
+                <button onclick="showMsg('Login')" class="px-5 py-2 bg-[#ffcc00] text-[#a31e2e] text-xs font-bold rounded-full hover:bg-white transition">LOGIN</button>
+                <button id="menuBtn" class="lg:hidden text-white text-2xl">☰</button>
+            </div>
+        </div>
+        
+        <div id="mobileMenu" class="hidden flex-col bg-[#8b1825] mt-4 space-y-4 pb-4 lg:hidden text-white text-center">
+            <a onclick="showMsg('Personal')" class="py-2 border-b border-white/10">Personal</a>
+            <a onclick="showMsg('Business')" class="py-2 border-b border-white/10">Business</a>
+            <a href="#cards-section" onclick="toggleMenu()" class="py-2 border-b border-white/10">Cards</a>
+            <a onclick="showMsg('Loans')" class="py-2">Loans</a>
+        </div>
+    </nav>
+
+    <header class="hero-bg text-white">
+        <div class="max-w-7xl mx-auto px-6 py-12 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left space-y-6">
+                <div class="inline-block bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-xs font-semibold">
+                    ✨ MODERN BANKING FOR A NEW INDIA
+                </div>
+                <h1 class="text-4xl md:text-7xl font-bold heading-font leading-tight hero-text">
+                    Banking that <br class="hidden md:block"> works for <span class="text-[#ffcc00]">you.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/80 max-w-md mx-auto md:mx-0">
+                    Secure, fast, and completely digital. Join the CXCO revolution today.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <button onclick="showMsg('Account Opening')" class="px-8 py-4 bg-[#ffcc00] text-[#a31e2e] font-bold rounded-xl shadow-lg hover:scale-105 transition">Open Account</button>
+                    <button onclick="showMsg('App Download')" class="px-8 py-4 border-2 border-white font-bold rounded-xl hover:bg-white hover:text-[#a31e2e] transition">Get the App</button>
+                </div>
+            </div>
+            
+            <div class="relative hidden sm:block">
+                <div class="bg-white/10 p-8 rounded-[2rem] border border-white/20">
+                    <div class="bg-white text-[#a31e2e] rounded-2xl p-6 shadow-2xl">
+                        <p class="text-xs uppercase font-bold opacity-60">Balance Available</p>
+                        <h3 class="text-4xl font-bold mt-1">₹ 4,87,392.00</h3>
+                        <div class="mt-6 flex justify-between items-center">
+                            <span class="text-sm font-medium">Hello, Abc 👋</span>
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">👤</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="cards-section" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold heading-font">Select Your Card</h2>
+            <div class="w-20 h-1 bg-[#a31e2e] mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div onclick="showMsg('Signature Card')" class="card-hover cursor-pointer bg-gray-50 p-4 rounded-3xl border border-gray-100">
+                <div class="credit-card text-white p-6 rounded-2xl flex flex-col justify-between mb-4">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold">CXCO</span>
+                        <span class="text-xl">VISA</span>
+                    </div>
+                    <div class="text-xl tracking-widest my-4">•••• •••• •••• 8912</div>
+                    <div class="flex justify-between items-end">
+                        <span class="text-xs uppercase">Abc Xyz</span>
+                        <span class="text-xs font-mono">03/29</span>
+                    </div>
+                </div>
+                <h4 class="font-bold text-center text-gray-800">Signature Credit</h4>
+            </div>
+
+            <div onclick="showMsg('Gold Card')" class="card-hover cursor-pointer bg-gray-50 p-4 rounded-3xl border border-gray-100">
+                <div class="credit-card credit-card-gold text-[#1a1a1a] p-6 rounded-2xl flex flex-col justify-between mb-4">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold">CXCO</span>
+                        <span class="text-xl">VISA</span>
+                    </div>
+                    <div class="text-xl tracking-widest my-4">•••• •••• •••• 4455</div>
+                    <div class="flex justify-between items-end">
+                        <span class="text-xs uppercase">Abc Xyz</span>
+                        <span class="text-xs font-mono">08/28</span>
+                    </div>
+                </div>
+                <h4 class="font-bold text-center text-gray-800">Premium Gold</h4>
+            </div>
+
+            <div onclick="showMsg('RuPay Card')" class="card-hover cursor-pointer bg-gray-50 p-4 rounded-3xl border border-gray-100 sm:col-span-2 lg:col-span-1">
+                <div class="credit-card bg-emerald-800 text-white p-6 rounded-2xl flex flex-col justify-between mb-4">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold">CXCO</span>
+                        <span class="text-xl font-bold italic">RuPay</span>
+                    </div>
+                    <div class="text-xl tracking-widest my-4">•••• •••• •••• 7789</div>
+                    <div class="flex justify-between items-end">
+                        <span class="text-xs uppercase">Abc Xyz</span>
+                        <span class="text-3xl">🇮🇳</span>
+                    </div>
+                </div>
+                <h4 class="font-bold text-center text-gray-800">RuPay Debit</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-20 px-6 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-[#a31e2e] font-bold tracking-widest text-sm uppercase">Support</span>
+                <h2 class="text-3xl md:text-5xl font-bold heading-font mt-2">Get in Touch</h2>
+                <p class="mt-4 text-gray-500">Have questions about CXCO? Send us a message directly.</p>
+            </div>
+            
+            <form action="https://formspree.io/f/mpqjgkeg" method="POST" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="Full Name" required 
+                           class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#a31e2e]/20 focus:border-[#a31e2e] transition">
+                    <input type="email" name="email" placeholder="Email Address" required 
+                           class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#a31e2e]/20 focus:border-[#a31e2e] transition">
+                </div>
+                <textarea name="message" rows="4" placeholder="Your message or query..." required
+                          class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#a31e2e]/20 focus:border-[#a31e2e] transition"></textarea>
+                <button type="submit" class="w-full bg-[#a31e2e] text-white font-bold py-5 rounded-2xl hover:bg-black shadow-lg shadow-red-900/10 transition uppercase tracking-wider">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-2">
+                    <div class="w-6 h-6 bg-[#a31e2e] text-white rounded-md flex items-center justify-center font-bold text-xs">C</div>
+                    <span class="text-xl font-bold heading-font tracking-tight">CXCO BANK</span>
+                </div>
+                <p class="text-xs text-gray-400 mt-2">© 2026 CupX Corporation. All Rights Reserved. Regulated Digital Banking Services.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-gray-600">
+                <span onclick="showMsg('Privacy')" class="cursor-pointer hover:text-[#a31e2e] transition">Privacy Policy</span>
+                <span onclick="showMsg('Terms')" class="cursor-pointer hover:text-[#a31e2e] transition">Terms of Service</span>
+                <span onclick="showMsg('Security')" class="cursor-pointer hover:text-[#a31e2e] transition">Fraud Security</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Native Browser Alert Implementation
+        function showMsg(feature) {
+            alert(window.location.hostname + " says: \n\n" + feature + " is currently in development! \n\nOur team is working hard to bring this to you by mid-2026. Thank you for choosing CXCO Bank.");
+        }
+
+        console.log("CXCO Bank - Rebranded & Theme Unified Version Loaded.");
+    </script>
+</body>
+</html>
